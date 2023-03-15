@@ -4,18 +4,17 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-
-public class Saludo {
+@Component //Con esto se indica que maneje como un Bean
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+public class SaludoComponent {
 
     private final String nombre;
 
-
-    public Saludo(String nombre){
+    public SaludoComponent() {
         this.nombre = "Beto";
-
-        System.out.println("Creando una instancia de Saludo");
     }
-    public String getNombre(){
+
+    public String getNombre() {
         return nombre;
     }
 }
